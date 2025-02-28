@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Arena - Play & Win</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <h1>Cash Arena</h1>
+        <div class="wallet">Wallet: ₹<span id="walletBalance">50</span></div>
+        <button onclick="showWallet()">Wallet</button>
+    </header>
+
+    <section class="game-lobby">
+        <h2>Select a Game</h2>
+        <div class="games-grid">
+            <div class="game-card" onclick="startGame('Aviator')">✈️ Aviator</div>
+            <div class="game-card" onclick="startGame('DragonTiger')">🐉 Dragon vs Tiger</div>
+            <div class="game-card" onclick="startGame('Ludo')">🎲 Ludo</div>
+            <div class="game-card" onclick="startGame('CarRacing')">🏎️ Car Racing</div>
+            <div class="game-card" onclick="startGame('LuckySpin')">☘️ Lucky Spin</div>
+        </div>
+    </section>
+
+    <section id="gameArea">
+        <!-- Game content will appear here dynamically -->
+    </section>
+
+    <!-- Wallet Modal -->
+    <div id="walletModal" class="wallet-modal">
+        <div class="modal-content">
+            <h2>Wallet</h2>
+            <p>Balance: ₹<span id="modalWalletBalance">50</span></p>
+            <button onclick="addFunds()">Add Funds</button>
+            <button onclick="withdrawFunds()">Withdraw</button>
+            <button onclick="showTransactionHistory()">View Transactions</button>
+            <button onclick="closeWallet()">Close</button>
+        </div>
+    </div>
+
+    <!-- Transaction History Modal -->
+    <div id="transactionHistoryModal" class="wallet-modal">
+        <div class="modal-content">
+            <h2>Transaction History</h2>
+            <ul id="transactionList">
+                <li>No transactions yet.</li>
+            </ul>
+            <button onclick="closeTransactionHistory()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="withdraw.js"></script>
+
+</body>
+</html>
